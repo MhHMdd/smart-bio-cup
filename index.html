@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Bio Cup</title>
+  <meta name="description" content="A smart cup that analyzes any beverage's health quality in real time using built-in sensors." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .animate-pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+  </style>
+</head>
+<body class="bg-[#0a0f1c] text-white antialiased">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0f1c]/90 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-xs font-bold text-black">BC</div>
+        <span class="font-bold text-lg tracking-tight">Smart Bio Cup</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+        <a href="#about" class="hover:text-teal-400 transition-colors">About</a>
+        <a href="#idea" class="hover:text-teal-400 transition-colors">The Idea</a>
+        <a href="#team" class="hover:text-teal-400 transition-colors">Team</a>
+        <a href="#data" class="hover:text-teal-400 transition-colors">Data</a>
+        <a href="#future" class="hover:text-teal-400 transition-colors">Future</a>
+      </div>
+      <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-gray-300">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col gap-3 text-sm text-gray-300">
+      <a href="#about">About</a>
+      <a href="#idea">The Idea</a>
+      <a href="#team">Team</a>
+      <a href="#data">Data</a>
+      <a href="#future">Future</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0a1628] via-[#0a0f1c] to-[#0a0f1c]"></div>
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-teal-500/20 rounded-full blur-[120px]"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-cyan-500/15 rounded-full blur-[100px]"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/20 text-teal-400 text-xs font-medium mb-6">
+          <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse-dot"></span>
+          Patent: SA 1020259312
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+          Smart<br />
+          <span class="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">Bio Cup</span>
+        </h1>
+        <p class="text-lg text-gray-400 leading-relaxed mb-8 max-w-lg">
+          A smart cup with built-in sensors that instantly analyzes sugar, salt, pH, and temperature of any beverage — giving you a health score before you drink.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#about" class="px-6 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 text-black font-semibold rounded-lg hover:opacity-90 transition-opacity">Learn More</a>
+          <a href="#data" class="px-6 py-3 border border-white/10 text-gray-300 rounded-lg hover:border-teal-500/50 transition-colors">View Data</a>
+        </div>
+      </div>
+      <div class="relative">
+        <img src="./smart_cup.jpeg" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About Project -->
+  <section id="about" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">About the Project</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Smart Bio Cup is an intelligent beverage analyzer designed to help people understand what they drink.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-teal-500/20 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-teal-500/10 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" /></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">4 Sensors</h3>
+          <p class="text-sm text-gray-400">pH, TDS, Refractometer, and Temperature sensors work together to analyze any beverage in real time.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-teal-500/20 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Health Score</h3>
+          <p class="text-sm text-gray-400">Calculates a 0-100 health score and identifies the beverage type with risk level assessment.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-teal-500/20 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
+          </div>
+          <h3 class="text-lg font-semibold mb-2">Live Dashboard</h3>
+          <p class="text-sm text-gray-400">Real-time display on TFT screen and Chrome Web Serial dashboard via USB connection.</p>
+        </div>
+      </div>
+      <div class="mt-16 grid md:grid-cols-2 gap-8 items-center">
+        <img src="./sense.jpeg" alt="Sensors and Components" class="rounded-2xl shadow-xl" />
+        <div>
+          <h3 class="text-2xl font-bold mb-4">How It Works</h3>
+          <div class="space-y-4">
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400 text-sm font-bold shrink-0">1</div>
+              <p class="text-gray-300">Pour any beverage into the cup</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400 text-sm font-bold shrink-0">2</div>
+              <p class="text-gray-300">Sensors detect pH, TDS, sugar (Brix), and temperature</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400 text-sm font-bold shrink-0">3</div>
+              <p class="text-gray-300">Arduino Mega processes data and identifies the drink</p>
+            </div>
+            <div class="flex gap-4 items-start">
+              <div class="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400 text-sm font-bold shrink-0">4</div>
+              <p class="text-gray-300">Health score and results shown on TFT screen + browser dashboard</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Idea -->
+  <section id="idea" class="py-24 bg-[#080d18]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">The Idea</h2>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            63% of adults consume sugary drinks daily without knowing the real sugar content. 64% of beverages labeled "low sugar" actually exceed the daily recommended limit. People are drinking blind.
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-6">
+            We asked: <span class="text-teal-400 font-medium">What if your cup could tell you the truth before you drink?</span>
+          </p>
+          <p class="text-gray-400 leading-relaxed">
+            Smart Bio Cup integrates multiple sensors directly into a drinking vessel, providing instant analysis without lab equipment. It empowers diabetics, patients, and health-conscious individuals to make informed decisions about every beverage they consume.
+          </p>
+        </div>
+        <div class="relative">
+          <img src="./ls.jpeg" alt="Health Score System" class="rounded-2xl shadow-xl" />
+          <div class="absolute -bottom-4 -right-4 px-4 py-2 bg-[#0a0f1c] border border-teal-500/20 rounded-lg">
+            <p class="text-xs text-gray-400">Real-time Analysis</p>
+            <p class="text-lg font-bold text-teal-400">Score: 85/100</p>
+          </div>
+        </div>
+      </div>
+      <!-- SDGs -->
+      <div class="mt-20 grid md:grid-cols-3 gap-6">
+        <div class="p-5 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+          <div class="text-3xl mb-2">&#127973;</div>
+          <h4 class="font-semibold text-sm mb-1">SDG 3</h4>
+          <p class="text-xs text-gray-400">Good Health & Well-Being</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+          <div class="text-3xl mb-2">&#128167;</div>
+          <h4 class="font-semibold text-sm mb-1">SDG 6</h4>
+          <p class="text-xs text-gray-400">Clean Water & Sanitation</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+          <div class="text-3xl mb-2">&#9881;&#65039;</div>
+          <h4 class="font-semibold text-sm mb-1">SDG 9</h4>
+          <p class="text-xs text-gray-400">Industry, Innovation & Infrastructure</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Members -->
+  <section id="team" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Team</h2>
+        <p class="text-gray-400">The minds behind Smart Bio Cup</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/5 text-center hover:border-teal-500/20 transition-colors">
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-teal-400 to-cyan-500 mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-black">A</div>
+          <h3 class="text-lg font-semibold">Abdulaziz AlNasr</h3>
+          <p class="text-sm text-teal-400 mt-1">Inventor & Developer</p>
+          <p class="text-xs text-gray-400 mt-3">Hardware design, sensor integration, and embedded programming</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-white/[0.02] border border-white/5 text-center hover:border-teal-500/20 transition-colors">
+          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-black">M</div>
+          <h3 class="text-lg font-semibold">Mohammed Yaser AlAbbas</h3>
+          <p class="text-sm text-cyan-400 mt-1">Inventor & Researcher</p>
+          <p class="text-xs text-gray-400 mt-3">Research, data analysis, business development, and documentation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data & Cost -->
+  <section id="data" class="py-24 bg-[#080d18]">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Project Data</h2>
+        <p class="text-gray-400">Cost analysis and key statistics</p>
+      </div>
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+        <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+          <p class="text-2xl md:text-3xl font-bold text-teal-400">63%</p>
+          <p class="text-xs text-gray-400 mt-2">Adults drink sugary beverages daily</p>
+        </div>
+        <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+          <p class="text-2xl md:text-3xl font-bold text-amber-400">64%</p>
+          <p class="text-xs text-gray-400 mt-2">"Low sugar" labels are misleading</p>
+        </div>
+        <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+          <p class="text-2xl md:text-3xl font-bold text-red-400">$735</p>
+          <p class="text-xs text-gray-400 mt-2">Annual cost per 1% HbA1c increase</p>
+        </div>
+        <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+          <p class="text-2xl md:text-3xl font-bold text-emerald-400">4</p>
+          <p class="text-xs text-gray-400 mt-2">Integrated sensors</p>
+        </div>
+      </div>
+      <!-- Cost Table -->
+      <div class="max-w-2xl mx-auto">
+        <h3 class="text-xl font-bold mb-6 text-center">Cost Breakdown</h3>
+        <div class="rounded-xl overflow-hidden border border-white/5">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-white/[0.03]">
+                <th class="text-left px-6 py-3 text-sm font-medium text-gray-300">Component</th>
+                <th class="text-right px-6 py-3 text-sm font-medium text-gray-300">Cost</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/5">
+              <tr><td class="px-6 py-3 text-sm text-gray-400">Refractometer</td><td class="px-6 py-3 text-sm text-right text-gray-300">$70</td></tr>
+              <tr><td class="px-6 py-3 text-sm text-gray-400">TDS Sensor</td><td class="px-6 py-3 text-sm text-right text-gray-300">$5</td></tr>
+              <tr><td class="px-6 py-3 text-sm text-gray-400">pH Sensor</td><td class="px-6 py-3 text-sm text-right text-gray-300">$20</td></tr>
+              <tr><td class="px-6 py-3 text-sm text-gray-400">Screen</td><td class="px-6 py-3 text-sm text-right text-gray-300">$10</td></tr>
+              <tr><td class="px-6 py-3 text-sm text-gray-400">Cup</td><td class="px-6 py-3 text-sm text-right text-gray-300">$40</td></tr>
+              <tr class="bg-teal-500/5">
+                <td class="px-6 py-3 text-sm font-bold text-white">Total</td>
+                <td class="px-6 py-3 text-sm text-right font-bold text-teal-400">$145</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- Revenue Projections -->
+      <div class="mt-16 max-w-3xl mx-auto">
+        <h3 class="text-xl font-bold mb-6 text-center">Revenue Projections</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+            <p class="text-xs text-gray-400 mb-1">Year 1</p>
+            <p class="text-2xl font-bold text-teal-400">$225K</p>
+          </div>
+          <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+            <p class="text-xs text-gray-400 mb-1">Year 2</p>
+            <p class="text-2xl font-bold text-cyan-400">$500K</p>
+          </div>
+          <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5 text-center">
+            <p class="text-xs text-gray-400 mb-1">Year 3</p>
+            <p class="text-2xl font-bold text-emerald-400">$1.5M</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Work -->
+  <section id="future" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Future Work</h2>
+        <p class="text-gray-400">Where we're heading next</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-teal-500/20 transition-colors">
+          <div class="text-2xl mb-3">&#128300;</div>
+          <h4 class="font-semibold mb-2">Custom Sensors</h4>
+          <p class="text-sm text-gray-400">Design custom miniaturized sensors to reduce cost and size.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-teal-500/20 transition-colors">
+          <div class="text-2xl mb-3">&#128241;</div>
+          <h4 class="font-semibold mb-2">Mobile App</h4>
+          <p class="text-sm text-gray-400">Bluetooth-connected smartphone app for tracking daily intake over time.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-teal-500/20 transition-colors">
+          <div class="text-2xl mb-3">&#129504;</div>
+          <h4 class="font-semibold mb-2">AI Analysis</h4>
+          <p class="text-sm text-gray-400">Long-term AI system for personalized health recommendations and early warnings.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-teal-500/20 transition-colors">
+          <div class="text-2xl mb-3">&#127981;</div>
+          <h4 class="font-semibold mb-2">PCB Design</h4>
+          <p class="text-sm text-gray-400">Custom PCB for mass production, reducing unit cost below $100.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section class="py-24 bg-[#080d18]">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">About Us</h2>
+      <p class="text-gray-400 leading-relaxed mb-8">
+        We are two young Saudi inventors passionate about using technology to solve real health problems. Our project started from a simple observation: people don't know what's really in their drinks. We combined our skills in electronics, programming, and research to build Smart Bio Cup — a device that gives instant, accurate beverage analysis to anyone who needs it.
+      </p>
+      <p class="text-gray-400 leading-relaxed mb-8">
+        Our project has been recognized with a registered patent (SA 1020259312).
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 text-sm">
+        <span class="px-4 py-2 rounded-full bg-white/[0.03] border border-white/5 text-gray-300">Arduino</span>
+        <span class="px-4 py-2 rounded-full bg-white/[0.03] border border-white/5 text-gray-300">PictoBlox</span>
+        <span class="px-4 py-2 rounded-full bg-white/[0.03] border border-white/5 text-gray-300">C++</span>
+        <span class="px-4 py-2 rounded-full bg-white/[0.03] border border-white/5 text-gray-300">Web Serial API</span>
+        <span class="px-4 py-2 rounded-full bg-white/[0.03] border border-white/5 text-gray-300">3D Printing</span>
+        <span class="px-4 py-2 rounded-full bg-white/[0.03] border border-white/5 text-gray-300">IoT</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 rounded bg-gradient-to-br from-teal-400 to-cyan-500 flex items-center justify-center text-[10px] font-bold text-black">BC</div>
+        <span class="text-sm text-gray-400">Smart Bio Cup &copy; 2025</span>
+      </div>
+      <p class="text-xs text-gray-500">Patent SA 1020259312 | Codeavour 2025 Competition Entry</p>
+    </div>
+  </footer>
+
+</body>
+</html>
